@@ -9,21 +9,6 @@ export const usePokemonStore = create(devtools((set, get) => ({
     searchQuery: "",
     searchedPokemon: [],
 
-    getPokemons: async () => {
-        try {
-            set({ loading: true });
-
-            const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
-            if (!res.ok) throw new Error("Error al obtener los Pokémon");
-
-            const data = await res.json();
-            set({ pokemons: data.results, loading: false });
-        } catch (error) {
-            console.error(error);
-            set({ loading: false });
-        }
-    },
-
     setSelectedPokemon: (pokemon) => set({ selectedPokemon: pokemon }),
 
     setSearchQuery: (query) => {
