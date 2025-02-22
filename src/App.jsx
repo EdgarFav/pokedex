@@ -8,6 +8,7 @@ import PokemonModal from './components/PokemonModal'
 import PokemonFilters from './components/PokemonFilter'
 // import CardSkeleton from './components/CardSkeleton'
 import { usePokemonStore } from './store/pokemonStore'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
           {selectedPokemon && <PokemonModal pokemon={selectedPokemon} onClose={() => setSelectedPokemon(null)} />}
         </AnimatePresence>
       </div>
+      <Footer />
     </main>
   )
 }
